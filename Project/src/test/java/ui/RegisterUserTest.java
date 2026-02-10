@@ -15,6 +15,7 @@ public class RegisterUserTest extends TestBase {
 
         homePage.clickSignupLogin();
         LoginPage loginPage = new LoginPage(driver);
+        Assert.assertTrue(loginPage.isLoginPageVisible(), "Login page not visible");
 
         String username = "elene";
         String email = "elene@gmail.com";

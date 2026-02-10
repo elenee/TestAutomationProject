@@ -20,8 +20,8 @@ public class LogoutUserTest extends TestBase {
         homePage.clickSignupLogin();
         Assert.assertTrue(loginPage.isLoginHeaderVisible(), "Login page is not visible");
 
-        loginPage.enterEmail("ketevansamukashvili@gmail.com")
-                .enterPassword("BatmanBatman")
+        loginPage.enterLoginEmail("ketevansamukashvili@gmail.com")
+                .enterLoginPassword("BatmanBatman")
                 .clickLogin();
 
         Assert.assertTrue(loginPage.isLoggedInAsVisible(), "User is not logged in");
