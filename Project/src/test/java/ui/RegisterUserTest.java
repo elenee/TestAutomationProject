@@ -18,7 +18,7 @@ public class RegisterUserTest extends TestBase {
         Assert.assertTrue(loginPage.isLoginPageVisible(), "Login page not visible");
 
         String username = "elene";
-        String email = "elene@gmail.com";
+        String email = "eleniko@gmail.com";
         loginPage.enterSignupName(username);
         loginPage.enterSignupEmail(email);
 
@@ -33,6 +33,7 @@ public class RegisterUserTest extends TestBase {
         );
 
         signupPage.clickCreateAccount();
+        driver.navigate().refresh();
 
         Assert.assertTrue(signupPage.isAccountCreatedVisible(), "Success message not found!");
         signupPage.clickContinue();

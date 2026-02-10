@@ -39,7 +39,7 @@ public class SignupPage extends BasePage {
         selectDropdownByValue(dobDay, day);
         selectDropdownByValue(dobMonth, month);
         selectDropdownByValue(dobYear, year);
-        click(newsletter);
+        scrollIntoView(newsletter);
         click(specialOffers);
         return this;
     }
