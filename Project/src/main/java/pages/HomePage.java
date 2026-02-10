@@ -12,6 +12,8 @@ public class HomePage extends BasePage{
     private By deleteAccountBtn = By.cssSelector("a[href='/delete_account']");
     private By accountDeletedMsg = By.xpath("//b[text()='Account Deleted!']");
     private By continueBtn = By.cssSelector("a[data-qa='continue-button']");
+    private By contactUsButton = By.xpath("//a[text()=' Contact us']");
+
     public boolean isHomePageVisible() {
         return driver.getTitle().contains("Automation Exercise");
     }
@@ -30,5 +32,9 @@ public class HomePage extends BasePage{
     }
     public boolean isLoggedInAs(String username) {
         return getText(loggedInStatus).contains(username);
+    }
+    public HomePage clickContactUs() {
+        click(contactUsButton);
+        return this;
     }
 }

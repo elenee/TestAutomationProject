@@ -41,4 +41,5 @@ public class BasePage {
         wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         new Select(driver.findElement(locator)).selectByVisibleText(text);
     }
+
 }
