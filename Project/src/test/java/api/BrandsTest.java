@@ -4,6 +4,7 @@ import io.restassured.RestAssured;
 import io.restassured.parsing.Parser;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import static org.hamcrest.Matchers.*;
 
 public class BrandsTest {
     private final BrandsClient brandsClient = new BrandsClient();
@@ -17,5 +18,14 @@ public class BrandsTest {
                 .then()
                 .log().body()
                 .statusCode(200);
+    }
+    @Test
+    public void putAllBrands_verifyMethodNotAllowed() {
+        brandsClient.putAllBrands()
+                .then()
+                .log().body()
+                .statusCode(200)
+                .body("responseCode", equalTo(405))
+                .body("message", equalTo("This request method is not supported."));
     }
 }

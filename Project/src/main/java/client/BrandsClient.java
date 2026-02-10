@@ -12,4 +12,10 @@ public class BrandsClient {
                 .when()
                 .get(BASE_PATH);
     }
+    public Response putAllBrands() {
+        return given()
+                .spec(RequestSpecFactory.defaultJsonSpec())
+                .when()
+                .put(BASE_PATH);
+    }
 }
