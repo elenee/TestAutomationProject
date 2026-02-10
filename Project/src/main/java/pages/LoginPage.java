@@ -38,6 +38,11 @@ public class LoginPage extends BasePage{
         return isDisplayed(loggedInAsText);
     }
 
+    public HomePage clickLogout() {
+        click(logoutButton);
+        return new HomePage(driver);
+    }
+}
     public LoginPage clickLogout() {
         click(logoutButton);
         return this;
