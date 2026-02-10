@@ -8,11 +8,17 @@ public class HomePage extends BasePage{
         super(driver);
     }
     private By signupLoginButton = By.cssSelector("a[href='/login']");
+    private By contactUsButton = By.xpath("//a[text()=' Contact us']");
+
     public boolean isHomePageVisible() {
         return driver.getTitle().contains("Automation Exercise");
     }
     public HomePage clickSignupLogin() {
         click(signupLoginButton);
+        return this;
+    }
+    public HomePage clickContactUs() {
+        click(contactUsButton);
         return this;
     }
 }
