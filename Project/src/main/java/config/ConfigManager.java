@@ -1,4 +1,4 @@
-package config; // <-- DO NOT FORGET THIS LINE
+package config;
 
 import java.io.InputStream;
 import java.util.Properties;
