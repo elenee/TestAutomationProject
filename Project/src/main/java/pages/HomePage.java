@@ -13,6 +13,7 @@ public class HomePage extends BasePage{
     private By accountDeletedMsg = By.xpath("//b[text()='Account Deleted!']");
     private By continueBtn = By.cssSelector("a[data-qa='continue-button']");
     private By contactUsButton = By.xpath("//a[text()=' Contact us']");
+    private By firstProductViewButton = By.xpath("(//a[contains(text(),'View Product')])[1]");
 
     public boolean isHomePageVisible() {
         return driver.getTitle().contains("Automation Exercise");
@@ -36,5 +37,9 @@ public class HomePage extends BasePage{
     public HomePage clickContactUs() {
         click(contactUsButton);
         return this;
+    }
+    public ProductPage clickFirstProductView() {
+        click(firstProductViewButton);
+        return new ProductPage(driver);
     }
 }

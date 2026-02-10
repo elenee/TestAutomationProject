@@ -19,6 +19,11 @@ public class ProductPage extends BasePage {
     private By searchButton = By.id("submit_search");
     private By searchedProductsTitle = By.xpath("//h2[text()='Searched Products']");
     private By productNames = By.cssSelector(".productinfo.text-center p");
+    private By productDetailSection = By.cssSelector(".product-details");
+    private By quantityInput = By.id("quantity");
+    private By addToCartButton = By.xpath("/html/body/section/div/div/div[2]/div[2]/div[2]/div/span/button");
+    private By viewCartButton = By.xpath("//u[contains(text(),'View Cart')]");
+
 
     public ProductPage clickProductsButton() {
         click(productsButton);
@@ -53,5 +58,25 @@ public class ProductPage extends BasePage {
         String lowerTerm = productName.toLowerCase();
         return getSearchedProductNames().stream()
                 .allMatch(name -> name.toLowerCase().contains(lowerTerm));
+    }
+
+    public boolean isProductDetailVisible() {
+        return isDisplayed(productDetailSection);
+    }
+
+    public ProductPage setQuantity(int qty) {
+        driver.findElement(quantityInput).clear();
+        driver.findElement(quantityInput).sendKeys(String.valueOf(qty));
+        return this;
+    }
+
+    public ProductPage clickAddToCart() {
+        click(addToCartButton);
+        return this;
+    }
+
+    public CartPage clickViewCart() {
+        click(viewCartButton);
+        return new CartPage(driver);
     }
 }
