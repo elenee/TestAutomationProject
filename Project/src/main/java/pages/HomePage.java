@@ -14,6 +14,13 @@ public class HomePage extends BasePage{
     private By continueBtn = By.cssSelector("a[data-qa='continue-button']");
     private By contactUsButton = By.xpath("//a[text()=' Contact us']");
     private By firstProductViewButton = By.xpath("(//a[contains(text(),'View Product')])[1]");
+    private By testCasesButton = By.cssSelector("a[href='/test_cases']");
+
+    private final By subscriptionHeader = By.xpath("//h2[normalize-space(translate(text(),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ'))='SUBSCRIPTION']");
+    private final By subscribeEmailInput = By.id("susbscribe_email");
+    private final By subscribeArrowButton = By.id("subscribe");
+    private final By subscribeSuccessAlert = By.xpath("//div[contains(@class,'alert-success') and contains(.,'You have been successfully subscribed!')]");
+
 
     public boolean isHomePageVisible() {
         return driver.getTitle().contains("Automation Exercise");
@@ -42,4 +49,26 @@ public class HomePage extends BasePage{
         click(firstProductViewButton);
         return new ProductPage(driver);
     }
+    public HomePage clickTestCases() {
+        click(testCasesButton);
+        return this;
+    }
+
+    public void scrollToFooterSubscription() {
+        scrollIntoView(subscriptionHeader);
+    }
+
+    public boolean isSubscriptionHeaderVisible() {
+        return isDisplayed(subscriptionHeader);
+    }
+
+    public void subscribeWithEmail(String email) {
+        type(subscribeEmailInput, email);
+        click(subscribeArrowButton);
+    }
+
+    public boolean isSubscriptionSuccessVisible() {
+        return isDisplayed(subscribeSuccessAlert);
+    }
+
 }

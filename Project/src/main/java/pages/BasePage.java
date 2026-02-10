@@ -43,4 +43,9 @@ public class BasePage {
         wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         new Select(driver.findElement(locator)).selectByVisibleText(text);
     }
+
+    protected void scrollIntoView(By locator) {
+        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
 }
