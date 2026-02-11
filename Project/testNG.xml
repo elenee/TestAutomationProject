@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ParallelSuite" parallel="classes" thread-count="3">
+
+    <test name="API_Tests">
+        <classes>
+            <class name="api.BrandsTest"/>
+            <class name="api.ProductApiTest"/>
+            <class name="api.ProductSearchTest"/>
+            <class name="api.UserApiTest"/>
+            <class name="api.UserLoginApiTest"/>
+        </classes>
+    </test>
+
+    <test name="UI_Tests">
+        <classes>
+            <class name="ui.RegisterUserTest"/>
+            <class name="ui.LoginUserTest"/>
+            <class name="ui.LogoutUserTest"/>
+            <class name="ui.ContactUsTest"/>
+            <class name="ui.SearchProductTest"/>
+            <class name="ui.SubscriptionTest"/>
+            <class name="ui.TestCasesPageTest"/>
+            <class name="ui.VerifyProductQuantityTest"/>
+        </classes>
+    </test>
+
+</suite>
