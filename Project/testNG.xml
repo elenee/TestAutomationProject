@@ -9,6 +9,8 @@
             <class name="api.ProductSearchTest"/>
             <class name="api.UserApiTest"/>
             <class name="api.UserLoginApiTest"/>
+            <class name="api.VerifyLoginApiTest"/>
+            <class name="api.VerifyLoginWithoutEmailTest"/>
         </classes>
     </test>
 
@@ -22,6 +24,8 @@
             <class name="ui.SubscriptionTest"/>
             <class name="ui.TestCasesPageTest"/>
             <class name="ui.VerifyProductQuantityTest"/>
+            <class name="ui.AddReviewOnProductTest"/>
+            <class name="ui.ViewBrandProductsTest"/>
         </classes>
     </test>
 
