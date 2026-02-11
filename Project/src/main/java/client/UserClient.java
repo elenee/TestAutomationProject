@@ -22,4 +22,15 @@ public class UserClient {
                 .when()
                 .post("/verifyLogin");
     }
+
+
+    public Response verifyLoginWithoutEmail(String password) {
+        return given()
+                .spec(RequestSpecFactory.defaultJsonSpec())
+                .contentType(io.restassured.http.ContentType.URLENC)
+                .formParam("password", password)
+                .log().parameters()
+                .when()
+                .post("/verifyLogin");
+    }
 }
