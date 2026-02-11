@@ -48,4 +48,9 @@ public class BasePage {
         WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
+
+    public void clickWithJS(By locator) {
+        WebElement element = driver.findElement(locator);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+    }
 }
