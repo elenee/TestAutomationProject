@@ -56,7 +56,7 @@
 - VerifyLoginWithValidDetailsTest  
 - VerifyLoginWithoutEmailTest  
 
-### UI (E2E) Test Cases
+### UI Test Cases
 - AddReviewOnProductTest  
 - ViewAndCartBrandProductsTest  
 
