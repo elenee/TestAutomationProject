@@ -12,14 +12,14 @@ public class UserClient {
                 .when()
                 .get("/getUserDetailByEmail");
     }
-    public Response deleteUserAccount(String email, String password) {
+
+    public Response verifyLogin(String email, String password) {
         return given()
                 .spec(RequestSpecFactory.defaultJsonSpec())
                 .contentType(io.restassured.http.ContentType.URLENC)
                 .formParam("email", email)
                 .formParam("password", password)
-                .log().parameters()
                 .when()
-                .delete("/deleteAccount");
+                .post("/verifyLogin");
     }
 }
